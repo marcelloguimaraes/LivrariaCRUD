@@ -1,0 +1,47 @@
+﻿@model LivrariaCRUD.Models.Livro
+
+@{
+    ViewBag.Title = "Excluir Livro";
+}
+
+<h2>Excluir</h2>
+
+<h3>Tem certeza que deseja excluir este livro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPublicacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPublicacao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
